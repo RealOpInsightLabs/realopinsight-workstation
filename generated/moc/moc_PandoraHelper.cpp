@@ -1,15 +1,15 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'ZnsHelper.hpp'
+** Meta object code from reading C++ file 'PandoraHelper.hpp'
 **
-** Created: Sun Dec 28 13:21:46 2014
+** Created: Sun Dec 28 13:21:50 2014
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../core/src/ZnsHelper.hpp"
+#include "../../core/src/PandoraHelper.hpp"
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'ZnsHelper.hpp' doesn't include <QObject>."
+#error "The header file 'PandoraHelper.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63
 #error "This file was generated using the moc from 4.8.4. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -17,7 +17,7 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-static const uint qt_meta_data_ZnsHelper[] = {
+static const uint qt_meta_data_PandoraHelper[] = {
 
  // content:
        6,       // revision
@@ -31,24 +31,25 @@ static const uint qt_meta_data_ZnsHelper[] = {
        1,       // signalCount
 
  // signals: signature, parameters, type, tag, flags
-      11,   10,   10,   10, 0x05,
+      15,   14,   14,   14, 0x05,
 
  // slots: signature, parameters, type, tag, flags
-      60,   55,   10,   10, 0x0a,
+      64,   59,   14,   14, 0x0a,
 
        0        // eod
 };
 
-static const char qt_meta_stringdata_ZnsHelper[] = {
-    "ZnsHelper\0\0propagateError(QNetworkReply::NetworkError)\0"
+static const char qt_meta_stringdata_PandoraHelper[] = {
+    "PandoraHelper\0\0"
+    "propagateError(QNetworkReply::NetworkError)\0"
     "code\0processError(QNetworkReply::NetworkError)\0"
 };
 
-void ZnsHelper::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void PandoraHelper::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         Q_ASSERT(staticMetaObject.cast(_o));
-        ZnsHelper *_t = static_cast<ZnsHelper *>(_o);
+        PandoraHelper *_t = static_cast<PandoraHelper *>(_o);
         switch (_id) {
         case 0: _t->propagateError((*reinterpret_cast< QNetworkReply::NetworkError(*)>(_a[1]))); break;
         case 1: _t->processError((*reinterpret_cast< const QNetworkReply::NetworkError(*)>(_a[1]))); break;
@@ -57,33 +58,33 @@ void ZnsHelper::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
     }
 }
 
-const QMetaObjectExtraData ZnsHelper::staticMetaObjectExtraData = {
+const QMetaObjectExtraData PandoraHelper::staticMetaObjectExtraData = {
     0,  qt_static_metacall 
 };
 
-const QMetaObject ZnsHelper::staticMetaObject = {
-    { &QNetworkAccessManager::staticMetaObject, qt_meta_stringdata_ZnsHelper,
-      qt_meta_data_ZnsHelper, &staticMetaObjectExtraData }
+const QMetaObject PandoraHelper::staticMetaObject = {
+    { &QNetworkAccessManager::staticMetaObject, qt_meta_stringdata_PandoraHelper,
+      qt_meta_data_PandoraHelper, &staticMetaObjectExtraData }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
-const QMetaObject &ZnsHelper::getStaticMetaObject() { return staticMetaObject; }
+const QMetaObject &PandoraHelper::getStaticMetaObject() { return staticMetaObject; }
 #endif //Q_NO_DATA_RELOCATION
 
-const QMetaObject *ZnsHelper::metaObject() const
+const QMetaObject *PandoraHelper::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
 }
 
-void *ZnsHelper::qt_metacast(const char *_clname)
+void *PandoraHelper::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_ZnsHelper))
-        return static_cast<void*>(const_cast< ZnsHelper*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_PandoraHelper))
+        return static_cast<void*>(const_cast< PandoraHelper*>(this));
     return QNetworkAccessManager::qt_metacast(_clname);
 }
 
-int ZnsHelper::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int PandoraHelper::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QNetworkAccessManager::qt_metacall(_c, _id, _a);
     if (_id < 0)
@@ -97,7 +98,7 @@ int ZnsHelper::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void ZnsHelper::propagateError(QNetworkReply::NetworkError _t1)
+void PandoraHelper::propagateError(QNetworkReply::NetworkError _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
