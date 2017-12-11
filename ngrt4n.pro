@@ -36,23 +36,6 @@ win32 {
   LIBS += -lws2_32
 }
 
-minimal {
-  DEFINES *= REALOPINSIGHT_DISABLE_ZMQ
-  DEFINES *= REALOPINSIGHT_DISABLE_BROWSER
-} else {
-  QT +=  webkit
-  HEADERS += core/src/ZmqSocket.hpp \
-             client/src/WebKit.hpp
-  SOURCES += core/src/ZmqSocket.cpp\
-             client/src/WebKit.cpp
-  win32 {
-    INCLUDEPATH += $$PWD/../ZeroMQ-2.2.0/include
-    LIBS += -L$$PWD/../ZeroMQ-2.2.0/bin -llibzmq-v100-mt
-  } else {
-    LIBS += -lzmq
-  }
-}
-
 OBJECTS_DIR = generated/obj
 MOC_DIR = generated/moc
 RCC_DIR = generated/rcc

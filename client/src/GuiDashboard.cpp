@@ -39,34 +39,7 @@ namespace {
   const QString JSON_ERROR_MSG("{\"return_code\": \"-1\", \"message\": \""%SERVICE_OFFLINE_MSG%"\"}");
   const qint32 CHART_WIDTH = 200;
   const qint32 CHART_HEIGHT = 200;
-  }
-
-#ifndef REALOPINSIGHT_DISABLE_BROWSER
-void GuiDashboard::handleSourceBxItemChanged(int index)
-{
-  int idx = extractSourceIndex(m_sourceSelectionBox->itemData(index).toString());
-  SourceListT::Iterator src = m_sources.find(idx);
-  if (src != m_sources.end()) {
-    changeBrowserUrl(src->id, src->mon_url, src->icon);
-  }
 }
-void GuiDashboard::changeBrowserUrl(const QString& sid, const QString& url, const QString& icon)
-{
-  m_browser->setUrl(url);
-  m_viewPanel->setTabText(BrowserTab, tr("Web Browser (%1)").arg(sid));
-  m_viewPanel->setTabIcon(BrowserTab, QIcon(icon));
-}
-
-void GuiDashboard::handleUpdateSourceUrl(void)
-{
-  if (m_firstSrcIndex >=0 ) {
-    SourceListT::Iterator first = m_sources.find(m_firstSrcIndex);
-    if (first != m_sources.end()) {
-      changeBrowserUrl(first->id, first->mon_url, first->icon);
-    }
-  }
-}
-#endif
 
 
 StringMapT GuiDashboard::propRules() {
@@ -101,12 +74,6 @@ GuiDashboard::GuiDashboard(const qint32& _userRole, const QString& _config)
 {
   m_viewPanel->addTab(m_map.get(), tr("Map"));
   m_viewPanel->setTabIcon(ConsoleTab, QIcon(":images/hierarchy.png"));
-
-#ifndef REALOPINSIGHT_DISABLE_BROWSER
-  m_browser.reset(new WebKit());
-  m_viewPanel->addTab(m_browser.get(), tr("Web Browser"));
-  m_viewPanel->setTabIcon(BrowserTab, QIcon(":images/web.png"));
-#endif
 
   m_widget->addWidget(m_lelfSplitter.get());
   m_widget->addWidget(m_rightSplitter.get());
@@ -375,10 +342,6 @@ void GuiDashboard::handleSettingsLoaded(void)
       m_sourceSelectionBox->addItem(QIcon(it->icon), it->id, QVariant(it->id));
     }
   }
-
-#ifndef REALOPINSIGHT_DISABLE_BROWSER
-  handleUpdateSourceUrl();
-#endif
 }
 
 

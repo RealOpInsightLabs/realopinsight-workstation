@@ -268,11 +268,4 @@ void MainWindow::addEvents(void)
   connect(m_dashboard, SIGNAL(updateStatusBar(const QString&)), this, SLOT(handleUpdateStatusBar(const QString&)));
   connect(m_dashboard, SIGNAL(updateInprogress()), this, SLOT(handleUpdateIntprogress()));
   connect(m_dashboard, SIGNAL(updateFinished()), this, SLOT(handleUpdateFinished()));
-
-
-#ifndef REALOPINSIGHT_DISABLE_BROWSER
-  connect(m_subMenus["BrowserBack"], SIGNAL(triggered(bool)), m_dashboard->getBrowser(), SLOT(back()));
-  connect(m_subMenus["BrowserForward"], SIGNAL(triggered(bool)), m_dashboard->getBrowser(), SLOT(forward()));
-  connect(m_subMenus["BrowserStop"], SIGNAL(triggered(bool)), m_dashboard->getBrowser(), SLOT(stop()));
-#endif
 }

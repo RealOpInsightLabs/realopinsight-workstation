@@ -29,7 +29,6 @@
 #include "Base.hpp"
 #include "Parser.hpp"
 #include "Preferences.hpp"
-#include "ZmqSocket.hpp"
 #include "ZbxHelper.hpp"
 #include "ZnsHelper.hpp"
 
@@ -59,9 +58,6 @@ public:
   QString lastErrorMsg(void) const {return m_lastErrorMsg;}
 
 public Q_SLOTS:
-#ifndef REALOPINSIGHT_DISABLE_ZMQ
-  void runNgrt4ndUpdate(const SourceT& src);
-#endif
   void runMonitor();
   void runMonitor(SourceT& src);
   void runDataSourceUpdate(const SourceT& srcInfo);

@@ -33,7 +33,6 @@
 #include "GraphView.hpp"
 #include "SvNavigatorTree.hpp"
 #include "GuiPreferences.hpp"
-#include "ZmqSocket.hpp"
 #include "ZbxHelper.hpp"
 #include "ZnsHelper.hpp"
 #include "DashboardBase.hpp"
@@ -86,17 +85,6 @@ public Q_SLOTS:
 Q_SIGNALS:
   void sortEventConsole(void);
   void centralTabChanged(int);
-
-#ifndef REALOPINSIGHT_DISABLE_BROWSER
-public:
-  WebKit* getBrowser(void) const {return m_browser.get();}
-public Q_SLOTS:
-  void handleSourceBxItemChanged(int index);
-  void handleUpdateSourceUrl(void);
-private:
-  std::unique_ptr<WebKit> m_browser;
-  void changeBrowserUrl(const QString& sid, const QString& url, const QString& icon);
-#endif
 
 protected:
   virtual void updateTrayInfo(const NodeT& _node);
